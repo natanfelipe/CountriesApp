@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragments.CountryFragment">
+
+    <data>
+
+        <variable
+            name="currency"
+            type="com.natanbrito.countriesapp.model.Currency" />
+
+        <variable
+            name="country"
+            type="com.natanbrito.countriesapp.model.Country" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_flag_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:loadImage="@{country.flag}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_capital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/lb_capital(country.capital)}"
+            tools:text="@string/lb_capital"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_flag_detail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/lb_languages"
+            app:property="@{country}"
+            app:type="@{@string/lb_languages}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_capital"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_currency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/lb_currency"
+            app:property="@{country}"
+            app:type="@{@string/lb_currency}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_language"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{@string/lb_area(String.format(`%.0f`,country.area))}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_currency"
+            tools:text="@string/lb_area" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_subregion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/lb_subregion"
+            android:text="@{@string/lb_subregion(country.subregion)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_area"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CountriesApp</string>
+    <string name="lb_country_name">Country name</string>
+    <string name="lb_country_region">Country region</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lb_error_loading">Unable to load the countries list</string>
+    <string name="lb_capital">Capital: %1s</string>
+    <string name="lb_no_capital">This country has no capital</string>
+    <string name="lb_languages">Languages: %1s</string>
+    <string name="lb_currency">Currency: %1s</string>
+    <string name="lb_subregion">Sub region: %1s</string>
+    <string name="lb_area">Area: %1s km²</string>
+    <string name="lb_borders">Borders: </string>
+    <string name="lb_country">Country</string>
+</resources>

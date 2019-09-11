@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/countries_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.natanbrito.countriesapp.view.fragments.ListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/actionGoToCountry"
+            app:destination="@id/countryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.natanbrito.countriesapp.view.fragments.CountryFragment"
+        android:label="@string/lb_country"
+        tools:layout="@layout/fragment_country">
+        <action
+            android:id="@+id/actionBackToList"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="country"
+            app:argType="com.natanbrito.countriesapp.model.Country" />
+    </fragment>
+</navigation>
